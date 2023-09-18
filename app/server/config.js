@@ -15,7 +15,7 @@ let myConfig;
 const configDefault = {
   listen: {
     ip: '0.0.0.0',
-    port: 2222,
+    port: 21002,
   },
   socketio: {
     serveClient: false,
