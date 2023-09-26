@@ -27,6 +27,6 @@ COPY app/ /usr/src/
 
 RUN npm ci --audit=false --bin-links=false --fund=false
 
-ENTRYPOINT [ "npm","start" ]
-
 EXPOSE 21002/tcp
+
+ENTRYPOINT [ "npm","start" ]
