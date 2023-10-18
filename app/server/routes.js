@@ -31,7 +31,6 @@ exports.connect = function connect(req, res) {
   // console.log(req.params.host);
   req.session.username = req.query.user;
   req.session.userpassword = req.query.pass;
-  console.log(`session_user = ${req.session.username}, session_password = ${req.session.userpassword}`);
 
   res.sendFile(path.join(path.join(publicPath, 'client.htm')));
 
@@ -57,8 +56,9 @@ exports.connect = function connect(req, res) {
       validator.isFQDN(req.params.host) ||
       /^(([a-z]|[A-Z]|\d|[!^(){}\-_~])+)?\w$/.test(req.params.host)
     ) {
-      host = shell.exec('facter ' + req.params.host , {silent:true}).stdout
-      console.log(`host: ${host}`)
+      host = shell.exec(`facter ${req.params.host}` , {silent:true}).stdout;
+      host = host.trim();
+      console.log(`session_user=${req.session.username}, session_password=${req.session.userpassword}, host=${host}`);
     }
   }
 
