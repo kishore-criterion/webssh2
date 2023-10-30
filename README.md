@@ -1,9 +1,5 @@
 # WebSSH2
 
-[![Build Status](https://travis-ci.com/billchurch/webssh2.svg?branch=main)](https://travis-ci.com/billchurch/webssh2) [![GitHub version](https://img.shields.io/github/v/release/billchurch/webssh2)](https://github.com/billchurch/webssh2/releases/latest) [![docker build images](https://github.com/billchurch/webssh2/actions/workflows/docker-multiplatform.yml/badge.svg)](https://github.com/billchurch/webssh2/actions/workflows/docker-multiplatform.yml)
-
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/billchurch)
-
 Web SSH Client using ssh2, socket.io, xterm.js, and express
 
 A bare bones example of an HTML5 web-based terminal emulator and SSH client. We use SSH2 as a client on a host to proxy a Websocket / Socket.io connection to a SSH2 server.
@@ -35,7 +31,7 @@ To install:
 
 6. Fire up a browser, navigate to IP/port of your choice and specify a host (https isn't used here because it's assumed it will be off-loaded to some sort of proxy):
 
-http://localhost:2222/ssh/host/127.0.0.1
+http://localhost:2222/ssh/host/<hostname>
 
 You will be prompted for credentials to use on the SSH server via HTTP Basic authentcaiton. This is to permit usage with some SSO systems that can replay credentials over HTTP basic.
 
@@ -57,24 +53,10 @@ On occasion, examples or instructions on `main` will drift from what is released
 That being said the most current release version is [0.4.6](https://github.com/billchurch/webssh2/tree/0.4.6), see that tag for details.
 
 ## Instructions
-
-Some configuration options are available as [Environment Variables](#environment-variables). If there is a configuration option you require which does not have an environment variable please [open an issue requesting](../../issues/new/choose).
-
-[webssh2 images are available in docker hub](https://hub.docker.com/repository/docker/billchurch/webssh2).
-
 the `latest` tag will pull the most recent stable release, otherwise you can pull individual tags/releases/versions of this repo by using a particular version in the tag.
 
-For instance:
 
-```docker pull billchurch/webssh2:0.4.6```
 
-or 
-
-```docker pull billchurch/webssh2:0.4.7-alpha.2```
-
-or
-
-```docker pull billchurch/webssh2```
 
 for the most recent
 
@@ -352,13 +334,6 @@ Clicking `Start logging` on the status bar will log all data to the client. A `D
 # Example:
 
 http://localhost:2222/ssh/host/192.168.1.1?port=2244&header=My%20Header&headerBackground=red
-
-# CONTRIBUTING
-As of 0.4.0, we're trying our best to conform to the [Airbnb Javascript Style Guide](https://airbnb.io/projects/javascript/). I'm hoping this will make contributions easier and keep the code readable. I love shortcuts more than anyone but I've found when making changes to code I've not looked at in a while, it can take me a few momements to deconstruct what was being done due to readbility issues. While I don't agree with every decision in the style guide (semi-colons, yuk), it is a good base to keep the code consistent.
-
-If you've not used it before, I recommend installing the [vscode extensions](https://blog.echobind.com/integrating-prettier-eslint-airbnb-style-guide-in-vscode-47f07b5d7d6a) for that and [Prettier](https://prettier.io/) and getting familiar. The autocorrections are great (especially if you hate dealing with semi-colons...)
-
-All contributions are welcome, all may not make it into a release... To increase the chances of your contribution making it into a release, try your best to conform to the style guides and targets of the project.
 
 # Tips
 * You can enable extended debug messages in the browser Java console using:
